@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +18,11 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
-Route::namespace('\\App\\Http\\Controllers\\Main\\')->group(function (){
-    Route::get('/', \App\Http\Controllers\Main\AboutController::class);
-});
+//Route::namespace('\\App\\Http\\Controllers\\Main\\')->group(function (){
+//    Route::get('/', \App\Http\Controllers\Main\AboutController::class);
+//});
 
+
+Auth::routes();
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
