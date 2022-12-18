@@ -25,5 +25,11 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+Route::middleware(['private'])->prefix('private')->group(function (){
+    Route::get('/', [\App\Http\Controllers\Private\IndexController::class, 'index'])->name('private.index');
+});
