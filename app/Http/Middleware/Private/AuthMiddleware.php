@@ -23,7 +23,7 @@ class AuthMiddleware
                 return $next($request);
             }
         } else {
-            return redirect()->route('home');
+            return to_route('home');
         }
     }
 }
