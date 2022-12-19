@@ -9,6 +9,6 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        return 11;
+        return view('private.index');
     }
 }
