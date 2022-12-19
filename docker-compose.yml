@@ -28,7 +28,7 @@ services:
         volumes:
             - ./tmp/db:/var/lib/mysql
         environment:
-            MYSQL_DATABASE: lardocker
+            MYSQL_DATABASE: sniffer
             MYSQL_ROOT_PASSWORD: root
         ports:
             - 8101:3306
